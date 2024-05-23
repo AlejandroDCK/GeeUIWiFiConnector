@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.letianpai.robot.wificonnet'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.letianpai.robot.wificonnet"
+        minSdk 26
+        targetSdk 32
+        versionCode 24042301
+        versionName "1.0."+versionCode
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+    signingConfigs {
+        config {
+            storeFile file('../keystore/letianpai.jks')
+            keyAlias 'letianpai'
+            keyPassword 'letianpai0801'
+            storePassword 'letianpai0801'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.airbnb.android:lottie:2.8.0'
+    implementation project(':Components')
+    implementation project(':CommChannel')
+//    implementation 'com.google.zxing:core:3.4.1'
+    implementation ('com.google.zxing:core:3.4.1') {
+        exclude group: 'com.google.zxing'
+    }
+
+
+//    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+//    implementation 'androidx.appcompat:appcompat:1.6.1'
+//    implementation 'com.google.android.material:material:1.11.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+//    testImplementation 'junit:junit:4.13.2'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/black"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="70px"
+            android:layout_weight="1"></View>
+
+        <RelativeLayout
+            android:layout_width="@dimen/wifi_select_width"
+            android:layout_height="@dimen/wifi_select_height"
+            android:layout_gravity="center_horizontal">
+
+            <!--        <TextView-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:layout_gravity="center_horizontal"-->
+            <!--            android:background="@drawable/rounded_corner_background"-->
+            <!--            android:gravity="left|center_vertical"-->
+            <!--            android:paddingLeft="20dp"-->
+            <!--            android:text="SelectWifi"-->
+            <!--            android:textColor="@color/white"-->
+            <!--            android:textSize="25sp"></TextView>-->
+            <TextView
+                android:id="@+id/tv_selected_wifi"
+                style="@style/wifi_style"
+                android:text="Selected Wi-Fi"></TextView>
+
+            <!--            <Spinner-->
+            <!--                android:id="@+id/sp_wifi_list"-->
+            <!--                style="@style/wifi_style"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:dropDownWidth="300px"-->
+            <!--                android:popupBackground="@drawable/rounded_corner_background"-->
+            <!--                android:spinnerMode="dropdown"></Spinner>-->
+
+
+            <ImageView
+                android:id="@+id/ivSelectWifi"
+                android:layout_width="36px"
+                android:layout_height="36px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/wifi_select"></ImageView>
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></View>
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/wifi_password"-->
+        <!--        android:layout_width="284px"-->
+        <!--        android:layout_height="34px"-->
+        <!--        android:layout_gravity="center_horizontal"-->
+        <!--        android:background="@drawable/rounded_corner_background"-->
+        <!--        android:gravity="left|center_vertical"-->
+        <!--        android:hint="Password"-->
+        <!--        android:paddingLeft="20dp"-->
+        <!--        android:textColor="@color/black"-->
+        <!--        android:textColorHint="@color/white40"-->
+        <!--        android:textSize="20sp"></TextView>-->
+
+        <RelativeLayout
+            android:layout_width="@dimen/wifi_select_width"
+            android:layout_height="@dimen/wifi_select_height"
+            android:layout_gravity="center_horizontal">
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/wifi_password"-->
+            <!--            style="@style/wifi_password_style"></TextView>-->
+            <EditText
+                android:id="@+id/wifi_password"
+                style="@style/wifi_password_style"
+                android:enabled="false"
+                android:maxLines="1"></EditText>
+
+            <ImageView
+                android:id="@+id/iv_wifi_commit"
+                android:layout_width="74px"
+                android:layout_height="41px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/password_commit"></ImageView>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_height"
+            android:orientation="horizontal">
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k11"
+                style="@style/keyboard_l1_side"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k12"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k13"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k14"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k15"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k16"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k17"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k18"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k19"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k110"
+                style="@style/keyboard_l1_side"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_height"
+            android:orientation="horizontal">
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k21"
+                style="@style/keyboard_l2_side"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k22"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k23"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k24"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k25"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k26"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k27"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k28"
+                style="@style/keyboard_normal"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k29"
+                style="@style/keyboard_l2_side"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_height"
+            android:orientation="horizontal">
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k31"
+                style="@style/keyboard_l3_side"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k32"
+                style="@style/keyboard_normal_l3"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k33"
+                style="@style/keyboard_normal_l3"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k34"
+                style="@style/keyboard_normal_l3"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k35"
+                style="@style/keyboard_normal_l3"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k36"
+                style="@style/keyboard_normal_l3"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/k37"
+                style="@style/keyboard_normal_l3"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+
+            <com.letianpai.robot.wificonnet.view.KeyButton
+                android:id="@+id/kDelete"
+                style="@style/keyboard_l3_side"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:text="←"
+                android:textStyle="bold"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_height_low"
+            android:background="@color/black"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@color/background"
+                android:orientation="horizontal">
+
+<!--                <Button-->
+<!--                    android:id="@+id/space_1"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="3"-->
+<!--                    android:background="@color/background"></Button>-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/kUp"-->
+<!--                    style="@style/keyboard1"-->
+<!--                    android:layout_weight="2"-->
+<!--                    android:gravity="right|center_vertical"-->
+<!--                    android:paddingRight="20dp"-->
+<!--                    android:paddingBottom="30dp"-->
+<!--                    android:text="▲"></TextView>-->
+                <com.letianpai.robot.wificonnet.view.KeyButton
+                    android:id="@+id/kUp"
+                    style="@style/keyboard1"
+                    android:layout_weight="2"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="30dp"
+                    android:text="▲"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@color/background">
+
+                <com.letianpai.robot.wificonnet.view.KeyButton
+                    android:id="@+id/kDown"
+                    style="@style/keyboard1"
+                    android:layout_weight="2"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="30dp"
+                    android:text="▼"></com.letianpai.robot.wificonnet.view.KeyButton>
+
+<!--                <TextView-->
+<!--                    android:id="@+id/kDown"-->
+<!--                    style="@style/keyboard1"-->
+<!--                    android:layout_weight="2"-->
+<!--                    android:gravity="left|center_vertical"-->
+<!--                    android:paddingLeft="20dp"-->
+<!--                    android:paddingBottom="30dp"-->
+<!--                    android:text="▼"></TextView>-->
+
+                <Button
+                    android:id="@+id/space_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/background"></Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_wifi_list"
+        android:layout_width="@dimen/wifi_select_width"
+        android:layout_height="@dimen/wifi_select_height"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140px">
+
+        <Spinner
+            android:id="@+id/sp_wifi_list"
+            style="@style/wifi_style"
+            android:layout_width="@dimen/wifi_select_width"
+            android:layout_height="match_parent"
+            android:dropDownWidth="200px"
+            android:popupBackground="@drawable/rounded_corner_background"
+            android:visibility="gone"
+            android:spinnerMode="dropdown"></Spinner>
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    <com.letianpai.robot.wificonnet.view.KeyBoardView-->
+<!--        android:id="@+id/keyboard"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"></com.letianpai.robot.wificonnet.view.KeyBoardView>-->
+
+    <com.letianpai.robot.wificonnet.view.TwelveGridKeyboardView
+        android:id="@+id/twelveGridKeyboardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"></com.letianpai.robot.wificonnet.view.TwelveGridKeyboardView>
+
+    <com.letianpai.robot.wificonnet.view.AutoConnectWifiView
+        android:id="@+id/autoConnectWifiView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.letianpai.robot.wificonnet.view.AutoConnectWifiView>
+
+<!--    <com.letianpai.robot.wificonnet.qrcode.QRCodeView-->
+<!--        android:id="@+id/qrCodeView"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"></com.letianpai.robot.wificonnet.qrcode.QRCodeView>-->
+
+    <com.letianpai.robot.wificonnet.view.WifiConnectOtaView
+        android:id="@+id/wifiConnectOtaView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+    </com.letianpai.robot.wificonnet.view.WifiConnectOtaView>
+
+    <com.letianpai.robot.wificonnet.view.PairingCodeKeyboardView
+        android:id="@+id/pairingCodeKeyboardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></com.letianpai.robot.wificonnet.view.PairingCodeKeyboardView>
+
+    <com.letianpai.robot.wificonnet.view.PairingInfoView
+        android:id="@+id/pairingInfoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></com.letianpai.robot.wificonnet.view.PairingInfoView>
+
+
+</RelativeLayout>

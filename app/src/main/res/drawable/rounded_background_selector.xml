@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- rounded_background_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 非按下状态 -->
+    <item android:state_pressed="false"  android:color="@color/commit_background_color">
+        <shape android:shape="rectangle">
+            <corners android:radius="22.5px" /> <!-- 设置圆角半径，这里是12dp -->
+            <solid android:color="@color/white" /> <!-- 设置非按下状态的背景颜色 -->
+        </shape>
+
+    </item>
+    <!-- 按下状态 -->
+    <item android:state_pressed="true" android:color="@color/white">
+        <shape android:shape="rectangle">
+            <corners android:radius="22.5px" /> <!-- 设置圆角半径，这里是12dp -->
+            <solid android:color="@color/commit_background_color" /> <!-- 设置按下状态的背景颜色 -->
+        </shape>
+    </item>
+</selector>

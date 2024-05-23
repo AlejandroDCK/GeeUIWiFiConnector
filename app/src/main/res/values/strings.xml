@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">WiFiConnector</string>
+    <string name="select_wifi">Select Wi-Fi</string>
+    <string name="wait_connect_wifi">Waiting…</string>
+    <string name="connecting_wifi">Connecting to Wi-Fi</string>
+    <string name="connect_success">Success</string>
+    <string name="connect_failed">Fail</string>
+    <string name="download_app">Scan QR code to add device\nRobot-</string>
+    <string name="download_app1">Add device after login</string>
+    <string name="next_step">Next step</string>
+    <string name="robot_info">Robot-</string>
+    <string name="guide_tips">Active the robot after viewing\nthe robot user guide in\nLetianpai App</string>
+    <string name="three_minutes_power_off"></string>
+    <string name="commit_value">OK</string>
+    <string name="check_new_version">checking for new version</string>
+    <string name="there_is_pair_code">there is no pair code</string>
+    <string name="check_new_version_des">1. Download the Letianpai APP at \n\tLetianpai.com\n2. Get "Code Binding" in Letianpai APP\n3. Enter the code on the robot to \n\tcomplete the binding\n1. 在Letianpai.com下载Letianpai APP\n2. 在Letianpai APP中获得“配对码”\n3. 在机器人屏幕输入配对码，完成绑定</string>
+</resources>

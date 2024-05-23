@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="80px"
+    android:layout_height="70px"
+    android:orientation="vertical"
+    android:layout_marginTop="1px"
+    android:layout_marginLeft="1px"
+    android:background="@color/black"
+    tools:ignore="MissingDefaultResource">
+
+    <com.letianpai.robot.wificonnet.view.KeyButton
+        android:id="@+id/keyButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:textAllCaps="false"
+        android:layout_width="79px"
+        android:layout_height="69px"
+        android:textSize="@dimen/key_size" />
+</RelativeLayout>

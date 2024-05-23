@@ -1,0 +1,129 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+
+    <style name="AppNoActionBar" >
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!--        <item name="android:background">@color/black</item>-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!--        <item name="android:background">@color/black</item>-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:layout_gravity="center_horizontal"-->
+<!--    android:background="@drawable/rounded_corner_background"-->
+<!--    android:gravity="left|center_vertical"-->
+<!--    android:paddingLeft="20dp"-->
+<!--    android:text="SelectWifi"-->
+<!--    android:textColor="@color/white"-->
+<!--    android:textSize="25sp"-->
+
+    <style name="wifi_style" >
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/rounded_corner_background</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">27sp</item>
+    </style>
+    <style name="pair_style" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">27sp</item>
+    </style>
+
+    <style name="wifi_password_style" parent="wifi_style">
+        <item name="android:hint">Password</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColorHint">@color/white40</item>
+    </style>
+    <style name="wifi_code_style" parent="wifi_style">
+        <item name="android:hint">Code</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColorHint">@color/white40</item>
+    </style>
+
+    <style name="keyboard" >
+        <item name="android:layout_marginLeft">@dimen/space_distance</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginTop">1px</item>
+        <item name="android:background">@color/background</item>
+        <item name="android:textColor">@color/keyboard_text_color</item>
+        <item name="android:textSize">@dimen/key_size</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+<!--    <style name="keyboard1" >-->
+<!--        <item name="android:layout_height">match_parent</item>-->
+<!--        <item name="android:layout_width">0dp</item>-->
+<!--        <item name="android:layout_marginTop">1px</item>-->
+<!--        <item name="android:background">@color/background</item>-->
+<!--        <item name="android:textColor">@color/keyboard_text_color</item>-->
+<!--        <item name="android:textSize">@dimen/key_size</item>-->
+<!--        <item name="android:textAllCaps">false</item>-->
+<!--    </style>-->
+    <style name="keyboard1" >
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginTop">1px</item>
+        <item name="android:background">@drawable/selector_key</item>
+        <item name="android:textColor">@color/keyboard_text_color</item>
+        <item name="android:textSize">@dimen/key_size</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="keyboard_normal" parent="keyboard">
+        <item name="android:layout_weight">44</item>
+    </style>
+    <style name="keyboard_normal_l3" parent="keyboard">
+        <item name="android:layout_weight">40</item>
+    </style>
+    <style name="keyboard_l3_side" parent="keyboard">
+        <item name="android:layout_weight">120</item>
+    </style>
+    <style name="keyboard_l2_side" parent="keyboard">
+        <item name="android:layout_weight">86</item>
+    </style>
+    <style name="keyboard_l1_side" parent="keyboard">
+        <item name="android:layout_weight">64</item>
+    </style>
+
+<!--    <style name="keyboard" >-->
+<!--        <item name="android:layout_marginLeft">@dimen/space_distance</item>-->
+<!--        <item name="android:layout_height">match_parent</item>-->
+<!--        <item name="android:layout_width">0dp</item>-->
+<!--        <item name="android:layout_marginTop">1px</item>-->
+<!--        <item name="android:layout_marginBottom">1px</item>-->
+<!--        <item name="android:background">@color/background</item>-->
+<!--        <item name="android:textColor">@color/keyboard_text_color</item>-->
+<!--        <item name="android:textSize">@dimen/key_size</item>-->
+<!--        <item name="android:textAllCaps">false</item>-->
+<!--    </style>-->
+    <style name="keyboard_scroll" >
+        <item name="android:layout_marginLeft">@dimen/space_distance</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">1px</item>
+        <item name="android:background">@color/background</item>
+        <item name="android:textColor">@color/keyboard_text_color</item>
+        <item name="android:textSize">@dimen/key_size</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:soundEffectsEnabled">false</item>
+    </style>
+</resources>
