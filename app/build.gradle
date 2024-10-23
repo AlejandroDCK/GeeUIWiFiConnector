@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.letianpai.robot.wificonnet'
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.letianpai.robot.wificonnet"
         minSdk 26
-        targetSdk 32
+        targetSdk 34
         versionCode 24042301
         versionName "1.0."+versionCode
 
@@ -28,10 +28,10 @@ android {
 //    }
     signingConfigs {
         config {
-            storeFile file('../keystore/letianpai.jks')
-            keyAlias 'letianpai'
-            keyPassword 'letianpai0801'
-            storePassword 'letianpai0801'
+            storeFile file('D:/NovaStudio/LetianpaiMigration/GeeUIWiFiConnector/keystore/wifikeystore.jks')
+            keyAlias 'wifikeystore'
+            keyPassword 'holahola'
+            storePassword 'holahola'
         }
     }
 
