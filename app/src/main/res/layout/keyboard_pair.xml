@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
@@ -8,50 +8,56 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="56px"
-        android:layout_weight="1"></View>
+        android:layout_marginTop="56dp"
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/tv_robot_name"
-        style="@style/pair_style"></TextView>
+        style="@style/pair_style" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></View>
+        android:layout_weight="1" />
 
     <TextView
         style="@style/pair_style"
-        android:text="输入配对码连接｜Enter code"></TextView>
+        android:text="@string/enter_code" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"></View>
+        android:layout_weight="2" />
 
     <LinearLayout
         android:layout_width="@dimen/wifi_select_width1"
         android:layout_height="@dimen/wifi_select_height"
         android:layout_gravity="center_horizontal"
-        android:gravity="center_vertical"
         android:background="@drawable/rounded_corner_background"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/wifi_password"
             style="@style/wifi_code_style"
+            android:autofillHints=""
             android:enabled="false"
-            android:maxLines="1"></EditText>
-
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:layout_height="48dp"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            tools:ignore="LabelFor,WearPasswordInput" />
 
         <com.letianpai.robot.wificonnet.view.CommitButton
             android:id="@+id/iv_wifi_commit"
-            android:layout_width="119px"
-            android:layout_height="41px"
+            android:layout_height="48dp"
+            android:layout_width="119dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:background="@drawable/rounded_background_selector"
-            android:textSize="@dimen/key_size"
-            ></com.letianpai.robot.wificonnet.view.CommitButton>
+            android:minHeight="48dp"
+            android:textSize="@dimen/key_size" />
 
     </LinearLayout>
 
@@ -68,21 +74,19 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="4px"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <com.letianpai.robot.wificonnet.view.KeyImageButton
                 android:id="@+id/lf1"
                 style="@style/keyboard_scroll"
-                android:layout_weight="1">
-            </com.letianpai.robot.wificonnet.view.KeyImageButton>
+                android:layout_weight="1"></com.letianpai.robot.wificonnet.view.KeyImageButton>
 
             <com.letianpai.robot.wificonnet.view.KeyImageButton
                 android:id="@+id/lf2"
                 style="@style/keyboard_scroll"
-                android:layout_weight="3">
-            </com.letianpai.robot.wificonnet.view.KeyImageButton>
+                android:layout_weight="3"></com.letianpai.robot.wificonnet.view.KeyImageButton>
 
         </LinearLayout>
 
@@ -108,55 +112,32 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="0dp"-->
-<!--                android:layout_weight="52"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <com.letianpai.robot.wificonnet.view.KeyImageButton-->
-<!--                    android:layout_marginLeft="3px"-->
-<!--                    android:id="@+id/bf1"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_weight="1"></com.letianpai.robot.wificonnet.view.KeyImageButton>-->
-
-<!--                <com.letianpai.robot.wificonnet.view.KeyImageButton-->
-<!--                    android:id="@+id/b22"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginLeft="1px"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_weight="1"></com.letianpai.robot.wificonnet.view.KeyImageButton>-->
                 <com.letianpai.robot.wificonnet.view.KeyImageButton
                     android:id="@+id/bf1"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="3px"
-                    android:layout_width="0dp"
                     android:layout_weight="1"></com.letianpai.robot.wificonnet.view.KeyImageButton>
+
                 <View
                     android:layout_width="1px"
                     android:layout_height="match_parent"></View>
 
                 <com.letianpai.robot.wificonnet.view.KeyImageButton
                     android:id="@+id/bf2"
-                    android:layout_height="match_parent"
                     android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"></com.letianpai.robot.wificonnet.view.KeyImageButton>
 
             </LinearLayout>
-
-            <!--            <com.letianpai.robot.wificonnet.view.KeyButton-->
-            <!--                style="@style/keyboard_scroll"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:text="Bottom"></com.letianpai.robot.wificonnet.view.KeyButton>-->
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="4px"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <com.letianpai.robot.wificonnet.view.KeyImageButton
@@ -174,6 +155,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

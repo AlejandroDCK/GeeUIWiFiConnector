@@ -15,4 +15,5 @@
     <string name="check_new_version">checking for new version</string>
     <string name="there_is_pair_code">there is no pair code</string>
     <string name="check_new_version_des">1. Download the Letianpai APP at \n\tLetianpai.com\n2. Get "Code Binding" in Letianpai APP\n3. Enter the code on the robot to \n\tcomplete the binding\n1. 在Letianpai.com下载Letianpai APP\n2. 在Letianpai APP中获得“配对码”\n3. 在机器人屏幕输入配对码，完成绑定</string>
+    <string name="enter_code">输入配对码连接｜Enter code</string>
 </resources>

@@ -41,7 +41,8 @@
         android:id="@+id/pairingCodeKeyboardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"></com.letianpai.robot.wificonnet.view.PairingCodeKeyboardView>
+        android:visibility="gone">
+    </com.letianpai.robot.wificonnet.view.PairingCodeKeyboardView>
 
     <com.letianpai.robot.wificonnet.view.PairingInfoView
         android:id="@+id/pairingInfoView"
