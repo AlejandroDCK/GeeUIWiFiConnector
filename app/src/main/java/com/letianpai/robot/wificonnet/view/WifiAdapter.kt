@@ -29,17 +29,21 @@ class WifiAdapter(private val mContext: Context?, private val wifiList: List<Sca
         return position.toLong()
     }
 
-    override fun getView(position: Int, convertView: View, parent: ViewGroup): View {
-        var convertView = convertView
-        if (convertView == null) {
-            convertView = View.inflate(mContext, R.layout.wifi_item, null)
-            ViewHolder(convertView)
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        var view = convertView
+
+        if (view == null) {
+            view = View.inflate(mContext, R.layout.wifi_item, null)
+            val holder = ViewHolder(view)
+            view.tag = holder
         }
-        val holder = convertView.tag as ViewHolder
+        val holder = view!!.tag as ViewHolder
+
         holder.wifiName.text = getItem(position).SSID
 
-        return convertView
+        return view
     }
+
 
     internal inner class ViewHolder(convertView: View) {
         var wifiName: TextView = convertView.findViewById<View>(R.id.wifi_ssid) as TextView

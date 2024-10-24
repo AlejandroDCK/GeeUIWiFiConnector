@@ -69,7 +69,8 @@ class MainActivity : Activity() {
             View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or View.SYSTEM_UI_FLAG_FULLSCREEN
         decorView.systemUiVisibility = uiOptions
         initViews()
-        //addListeners()
+        addListeners()
+        SystemUtil.checkWifiPermissions(this)
         if (isFromOpenRobot) {
             closeRobot()
         }
@@ -88,18 +89,26 @@ class MainActivity : Activity() {
         pairingInfoView = findViewById(R.id.pairingInfoView)
     }
 
-    /*
+
     private fun addListeners() {
-        BleConnectStatusCallback.instance.registerBleConnectStatusListener { connectStatus ->
-            if (BleConnectStatusCallback.BLE_STATUS_CONNECTING_NET == connectStatus) {
-                showConnecting()
-            } else if (BleConnectStatusCallback.BLE_STATUS_CONNECTED_ANIMATION_PLAY_END == connectStatus) {
-                connectSuccess()
-            } else if (BleConnectStatusCallback.BLE_STATUS_CONNECTED_FAILED_ANIMATION_PLAY_END == connectStatus) {
-                connectFailed()
+        val bleStatusListener = object : BleConnectStatusCallback.BleConnectStatusChangedListener {
+            override fun onBleConnectStatusChanged(connectStatus: Int) {
+                when (connectStatus) {
+                    BleConnectStatusCallback.BLE_STATUS_CONNECTING_NET -> {
+                        showConnecting()
+                    }
+                    BleConnectStatusCallback.BLE_STATUS_CONNECTED_ANIMATION_PLAY_END -> {
+                        connectSuccess()
+                    }
+                    BleConnectStatusCallback.BLE_STATUS_CONNECTED_FAILED_ANIMATION_PLAY_END -> {
+                        connectFailed()
+                    }
+                }
             }
         }
-    }*/
+        BleConnectStatusCallback.instance.registerBleConnectStatusListener(bleStatusListener)
+    }
+
 
     private var mWIFIStateReceiver: WIFIStateReceiver? = null
 

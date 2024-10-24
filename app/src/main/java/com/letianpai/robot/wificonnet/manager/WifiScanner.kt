@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.net.wifi.ScanResult
 import android.net.wifi.WifiManager
+import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.letianpai.robot.wificonnet.system.SystemUtil
 
@@ -27,17 +28,12 @@ class WifiScanner(private val context: Context) {
     val availableWifiList: List<ScanResult>
         @SuppressLint("MissingPermission")
         get() {
-            SystemUtil.checkWifiPermissions(context as Activity)
-            // Initiate Wi-Fi scanning and check if it starts successfully
-            val scanStarted = wifiManager.startScan()
-            if (!scanStarted) {
-                throw RuntimeException("Wi-Fi scan initiation failed.")
-
+            if (SystemUtil.wifiPermissionsGranted){
+                if (!wifiManager.isWifiEnabled) {
+                    wifiManager.setWifiEnabled(true)
+                }
             }
-            // Retrieve scan results
-            if (!hasLocationPermission() && !isLocationEnabled()){
-                throw RuntimeException("Missing permission")
-            }
+            Log.e("Connected", "El wifi esta habilitado ${wifiManager.isWifiEnabled}")
             return wifiManager.scanResults
         }
 

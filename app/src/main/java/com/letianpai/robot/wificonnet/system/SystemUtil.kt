@@ -29,6 +29,7 @@ object SystemUtil {
     const val DEVICE_SIGN: String = "persist.sys.device.sign"
     private const val ROBOT_STATUS = "persist.sys.robot.status"
     const val REGION_LANGUAGE: String = "persist.sys.region.language"
+    var wifiPermissionsGranted = false
 
     private const val ROBOT_STATUS_TRUE = "true"
     const val REGION_LANGUAGE_ZH: String = "zh"
@@ -267,20 +268,20 @@ object SystemUtil {
         }
     }
 
-    fun checkWifiPermissions(activity: Activity): Boolean {
+    fun checkWifiPermissions(activity: Activity) {
         val requiredPermissions = arrayOf(
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_WIFI_STATE,
-            Manifest.permission.CHANGE_WIFI_STATE
+            Manifest.permission.CHANGE_WIFI_STATE,
         )
 
         val missingPermissions = requiredPermissions.filter { permission ->
             ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED
         }
 
-        return if (missingPermissions.isNotEmpty()) {
+        if (missingPermissions.isNotEmpty()) {
             ActivityCompat.requestPermissions(activity, missingPermissions.toTypedArray(), 1)
-            false
-        } else true
+        }
+        wifiPermissionsGranted = true
     }
 }

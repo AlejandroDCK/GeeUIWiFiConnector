@@ -15,6 +15,7 @@ import android.util.Log
 import com.letianpai.robot.wificonnet.callback.BleConnectStatusCallback
 import com.letianpai.robot.wificonnet.callback.BleConnectStatusCallback.Companion.instance
 import com.letianpai.robot.wificonnet.system.SystemUtil
+import com.letianpai.robot.wificonnet.system.SystemUtil.wifiPermissionsGranted
 import com.letianpai.robot.wificonnet.wifi.callback.GuideWifiConnectCallback
 
 /**
@@ -48,7 +49,7 @@ class WIFIAutoConnectionService : Service() {
                     SCAN_RESULT -> {
                         var isSSIDAvailable = false
                         if (mWifiManager != null) {
-                            if (SystemUtil.checkWifiPermissions(applicationContext as Activity)) {
+                            if (wifiPermissionsGranted) {
                                 val scanResults = mWifiManager!!.scanResults
                                 for (scanResult in scanResults) {
 //                        Log.e("WIFIConnectionManager", "发现的 ssid 有: " + scanResult.SSID);

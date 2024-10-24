@@ -56,7 +56,7 @@ class TwelveGridKeyboardView : LinearLayout {
         private set
     private var currentKeypadPosition = 0
     private var wifiScanner: WifiScanner? = null
-    private lateinit var mWifiName: String
+    private var mWifiName = ""
 
 
     constructor(context: Context) : super(context) {

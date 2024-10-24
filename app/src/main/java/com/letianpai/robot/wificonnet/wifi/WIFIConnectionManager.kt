@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat
 import com.letianpai.robot.wificonnet.callback.BleConnectStatusCallback
 import com.letianpai.robot.wificonnet.callback.BleConnectStatusCallback.Companion.instance
 import com.letianpai.robot.wificonnet.system.SystemUtil
+import com.letianpai.robot.wificonnet.system.SystemUtil.wifiPermissionsGranted
 import com.letianpai.robot.wificonnet.wifi.callback.GuideWifiConnectCallback
 
 /**
@@ -320,7 +321,7 @@ class WIFIConnectionManager(private val mContext: Context) {
 
     @SuppressLint("MissingPermission")
     private fun findNetworkIdBySsid(ssid: String): Int {
-        return if (!SystemUtil.checkWifiPermissions(mContext as Activity)) -1 else {
+        return if (!wifiPermissionsGranted) -1 else {
             val wifiConfigs = wifiManager.configuredNetworks
 
             var curNetworkId = -1
