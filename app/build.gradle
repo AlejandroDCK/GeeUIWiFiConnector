@@ -16,17 +16,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
-//    buildTypes {
-//        release {
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//    }
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_1_8
-//        targetCompatibility JavaVersion.VERSION_1_8
-//    }
+    /*
     signingConfigs {
         config {
             storeFile file('D:/NovaStudio/LetianpaiMigration/GeeUIWiFiConnector/keystore/wifikeystore.jks')
@@ -35,33 +25,34 @@ android {
             storePassword 'holahola'
         }
     }
+     */
 
     buildTypes {
         debug {
-            signingConfig signingConfigs.config
+            //signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
         }
         release {
-            signingConfig signingConfigs.config
+            //signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_11
     }
 }
 
 dependencies {
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'com.airbnb.android:lottie:2.8.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'com.airbnb.android:lottie:6.5.2'
     implementation project(':Components')
     implementation project(':CommChannel')
 //    implementation 'com.google.zxing:core:3.4.1'

@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/GeeUIComponents" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/GeeUIComponets" vcs="Git" />
   </component>
 </project>

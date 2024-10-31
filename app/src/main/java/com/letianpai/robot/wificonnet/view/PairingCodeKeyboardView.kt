@@ -7,7 +7,6 @@ import android.os.Message
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.Log
-import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -64,7 +63,6 @@ class PairingCodeKeyboardView @JvmOverloads constructor(
     private val wifiScanner: WifiScanner? = null
     private val mWifiName: String? = null
     private var bindRobotCallback: Callback? = null
-
 
     init {
         this.mContext = context
@@ -157,17 +155,20 @@ class PairingCodeKeyboardView @JvmOverloads constructor(
 
     private fun responseDelete() {
         contentPassword = removeLastByte(contentPassword)
-        wifiPassword!!.text = contentPassword
+        wifiPassword.text = contentPassword
     }
 
     private fun setData() {
         adapter = CustomAdapter(getInstance(mContext!!)!!.numericPairingCodeKeyList)
         recyclerView.adapter = adapter
         try {
-            robotName!!.text = "Robot-" + SystemUtil.getLtpLastSn()
+            robotName!!.text = ("Robot-" + SystemUtil.ltpLastSn) ?: "Unknown"
         } catch (e: SecurityException) {
             Log.e("PairingCodeKeyboardView", "Failed to get device serial number: ${e.message}")
             robotName!!.text = "Robot-Unknown" // Fallback name
+        } catch (e: ExceptionInInitializerError){
+            Log.e("PairingCodeKeyboardView", "Failed to get device serial number: ${e.message}")
+            robotName!!.text = "Robot-Unknown"
         }
     }
 
@@ -176,8 +177,8 @@ class PairingCodeKeyboardView @JvmOverloads constructor(
         robotName = findViewById(R.id.tv_robot_name)
         ivWifiCommit = findViewById(R.id.iv_wifi_commit)
         wifiPassword = findViewById(R.id.wifi_password)
-        wifiPassword.setFocusableInTouchMode(false) // 设置为不可触摸模式
-        wifiPassword.setFocusable(true)
+        wifiPassword.setFocusableInTouchMode(false) // Set to non-touchable mode
+        wifiPassword.isFocusable = true
         wifiPassword.setCursorVisible(true)
 
         glKeys = findViewById(R.id.recyclerView)
@@ -195,7 +196,7 @@ class PairingCodeKeyboardView @JvmOverloads constructor(
 
     fun cleanPassword() {
         contentPassword = ""
-        wifiPassword!!.text = contentPassword
+        wifiPassword.text = contentPassword
     }
 
     private inner class UpdateViewHandler(context: Context) : Handler() {
@@ -214,8 +215,8 @@ class PairingCodeKeyboardView @JvmOverloads constructor(
         if (msg.arg1 == KeyPressCallback.KEY_TYPE_VALUE) {
             contentPassword = contentPassword + msg.obj
         }
-        wifiPassword!!.isPressed = true
-        wifiPassword!!.text = contentPassword
+        wifiPassword.isPressed = true
+        wifiPassword.text = contentPassword
     }
 
     fun updateWifiPassword(keyPressType: Int, updateContent: String?) {
@@ -236,18 +237,18 @@ class PairingCodeKeyboardView @JvmOverloads constructor(
     private fun bindRobot(code: String?, callback: Callback?) {
         Log.e("letianpai", "bindRobotWithCode ========== 04 =========contentPassword: ")
         val country = getCountry(code)
-        val mac = SystemUtil.getWlanMacAddress()
+        val mac = SystemUtil.wlanMacAddress
         val ts = (System.currentTimeMillis() / 1000).toString() + ""
-        val sn = SystemUtil.getLtpSn()
+        val sn = SystemUtil.ltpSn
         val deviceSign = getDeviceSign(mac, ts)
-        //TODO 增加获取
-        val hashMap: HashMap<String?, Any?> = HashMap()
+        //TODO Increased access
+        val hashMap: HashMap<String, Any> = HashMap()
 
-        hashMap["code"] = code
+        hashMap["code"] = code.toString()
         hashMap[GeeUINetworkUtil.COUNTRY] = country
-        hashMap["device_sign"] = deviceSign
+        hashMap["device_sign"] = deviceSign.toString()
         hashMap["hard_code"] = ""
-        hashMap["mac"] = mac
+        hashMap["mac"] = mac.toString()
         hashMap["sn"] = sn
         hashMap["ts"] = ts
 

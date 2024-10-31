@@ -79,7 +79,7 @@ class MainActivity : Activity() {
     private fun initViews() {
         //        keyBoardView = findViewById(R.id.keyboard);
         twelveGridKeyboardView = findViewById(R.id.twelveGridKeyboardView)
-        if (!RobotSubConfigManager.getInstance(this@MainActivity).isNeedRegisterWifi) {
+        if (!RobotSubConfigManager.getInstance(this@MainActivity)!!.isNeedRegisterWifi) {
             twelveGridKeyboardView?.visibility = View.GONE
         }
         autoConnectWifiView = findViewById(R.id.autoConnectWifiView)
@@ -113,7 +113,7 @@ class MainActivity : Activity() {
     private var mWIFIStateReceiver: WIFIStateReceiver? = null
 
     fun registerWIFIStateReceiver() {
-        if (!RobotSubConfigManager.getInstance(this@MainActivity).isNeedRegisterWifi) {
+        if (!RobotSubConfigManager.getInstance(this@MainActivity)!!.isNeedRegisterWifi) {
             return
         }
         if (mWIFIStateReceiver == null) {
@@ -345,9 +345,9 @@ class MainActivity : Activity() {
     private fun openLauncherMainView() {
         if (!isGetValidBindInfo) {
             isGetValidBindInfo = true
-            RobotSubConfigManager.getInstance(this@MainActivity).openMainViewTime =
+            RobotSubConfigManager.getInstance(this@MainActivity)!!.openMainViewTime =
                 System.currentTimeMillis()
-            RobotSubConfigManager.getInstance(this@MainActivity).commit()
+            RobotSubConfigManager.getInstance(this@MainActivity)!!.commit()
             val START_FROM = "from"
             val START_FROM_WIFI_CONNECTOR = "wifi_connector"
             val className = "com.renhejia.robot.launcher.main.activity.LeTianPaiMainActivity"

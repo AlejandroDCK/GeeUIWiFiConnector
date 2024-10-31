@@ -14,5 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "GeeUIWiFiConnector"
 include ':app', ':CommChannel', ':Components'
-project(':CommChannel').projectDir = new File('GeeUIComponents/CommChannel')
-project(':Components').projectDir = new File('GeeUIComponents/Components')
+project(':CommChannel').projectDir = new File('../GeeUIComponents/CommChannel')
+project(':Components').projectDir = new File('../GeeUIComponents/Components')

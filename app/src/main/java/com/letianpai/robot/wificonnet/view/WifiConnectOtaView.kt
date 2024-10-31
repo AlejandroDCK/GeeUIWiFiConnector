@@ -157,7 +157,7 @@ class WifiConnectOtaView : RelativeLayout {
 
     private fun responseRequestOTA() {
         val localRomVersion = romVersion
-        GeeUiNetManager.getOTAInfo(mContext, SystemUtil.isInChinese(), object : Callback {
+        GeeUiNetManager.getOTAInfo(mContext, SystemUtil.isInChinese, object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("letianpai_ota", "info----------_3:_____ onFailure ")
                 e.printStackTrace()
